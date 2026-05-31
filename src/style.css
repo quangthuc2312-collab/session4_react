@@ -1,0 +1,485 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 9px 13px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  margin: 3px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  padding: 24px;
+  background: #111827;
+  color: white;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h1 {
+  margin-top: 0;
+  font-size: 26px;
+}
+
+.sidebar p {
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.tier-menu {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tier-menu button {
+  text-align: left;
+  background: #1f2937;
+  color: white;
+  padding: 12px;
+  border: 1px solid #374151;
+}
+
+.tier-menu button.selected {
+  background: #2563eb;
+  border-color: #60a5fa;
+}
+
+.tier-menu span,
+.tier-menu small {
+  display: block;
+}
+
+.tier-menu small {
+  color: #dbeafe;
+  margin-top: 3px;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+.tier-card {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tier-heading {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.tier-heading h2 {
+  margin: 6px 0;
+  font-size: 30px;
+}
+
+.tier-heading p {
+  margin-bottom: 0;
+  color: #4b5563;
+}
+
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8 !important;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.demo-card,
+.todo-app,
+.mini-page {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.demo-card.wide,
+.todo-app,
+.mini-page {
+  margin-bottom: 18px;
+}
+
+.demo-card h3 {
+  margin-top: 0;
+}
+
+.note,
+.preview,
+.flow-box,
+.success-box {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+.dark {
+  background: #1f2937;
+  color: white;
+}
+
+.big-avatar {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e0f2fe;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+}
+
+.price,
+.red {
+  color: #dc2626;
+}
+
+.green,
+.success-text {
+  color: #16a34a;
+}
+
+.error-text {
+  color: #dc2626;
+}
+
+.empty-text {
+  color: #6b7280;
+  text-align: center;
+  padding: 25px;
+}
+
+.row-line,
+.crud-row,
+.todo-item,
+.todo-footer,
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.form-row input,
+.crud-row input {
+  flex: 1;
+}
+
+.form-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.inline-input {
+  display: flex;
+  gap: 5px;
+}
+
+.inline-input input {
+  flex: 1;
+}
+
+.check-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.check-line input {
+  width: auto;
+}
+
+.color-box {
+  margin-top: 12px;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  text-align: center;
+}
+
+.move-area {
+  height: 120px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.move-box {
+  width: 30px;
+  height: 30px;
+  background: #2563eb;
+  border-radius: 8px;
+  transition: transform 0.1s;
+}
+
+.muted-btn,
+.muted {
+  background: #6b7280;
+}
+
+.danger {
+  background: #dc2626;
+}
+
+.success {
+  background: #16a34a;
+}
+
+.small {
+  padding: 6px 9px;
+  font-size: 13px;
+}
+
+.highlight-input {
+  border: 2px solid #2563eb;
+}
+
+.age-input {
+  max-width: 90px;
+}
+
+.mini-header,
+.mini-footer {
+  background: #111827;
+  color: white;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.mini-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mini-header a {
+  color: white;
+  margin-left: 12px;
+  text-decoration: none;
+}
+
+.mini-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.product-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+}
+
+.product-icon {
+  font-size: 46px;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.price-tag span {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.price-tag strong {
+  color: #dc2626;
+}
+
+.todo-app {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.todo-app h1 {
+  text-align: center;
+}
+
+.todo-input-row,
+.todo-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.todo-input-row input {
+  flex: 1;
+}
+
+.todo-filter button {
+  flex: 1;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.todo-filter button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.todo-item {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.todo-item input[type="checkbox"] {
+  width: auto;
+}
+
+.todo-text {
+  flex: 1;
+}
+
+.todo-edit-input {
+  flex: 1;
+}
+
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.todo-footer {
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .grid.two,
+  .grid.three,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-header,
+  .todo-input-row,
+  .todo-footer,
+  .form-row,
+  .crud-row,
+  .todo-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
